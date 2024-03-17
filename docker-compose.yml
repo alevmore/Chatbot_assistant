@@ -1,0 +1,45 @@
+# Docker-команда FROM вказує базовий образ контейнера
+# Наш базовий образ - це Linux з попередньо встановленим python-3.10
+FROM python:3.10
+
+# Встановимо змінну середовища
+ENV APP_HOME /app
+
+# Встановимо робочу директорію всередині контейнера
+WORKDIR $APP_HOME
+
+# Скопіюємо інші файли в робочу директорію контейнера
+COPY . .
+
+# Встановимо залежності всередині контейнера
+RUN pip install -r requirements.txt
+
+# Позначимо порт, де працює застосунок всередині контейнера
+EXPOSE 5000
+
+# Запустимо наш застосунок всередині контейнера
+ENTRYPOINT ["python", "app.py"]
+
+version: '3'
+services:
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+  postgres:
+    image: postgres:12
+    environment:
+      POSTGRES_DB: rest_app
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 567234
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+      - postgres
