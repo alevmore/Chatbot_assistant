@@ -28,8 +28,8 @@ o	Users can interact with the bot using commands like:
 "hello": A friendly greeting command.
 7.	Main Execution Flow:
 o	The main function initializes the address book, provides a welcome message, and enters a loop to accept and process user input, making the bot interactive and responsive to various commands.
-8. Робота з Docker
-Застосунок упакований та розгорнутий у контейнері Docker для зручності використання та забезпечення ізоляції середовища. 
+8. Working with Docker
+The application is packaged and deployed in a Docker container for ease of use and to provide environment isolation.
 Use Case
 This bot can be used as a personal assistant for managing contacts, storing and retrieving information efficiently, and being notified of upcoming birthdays. It is a practical solution for users who prefer a command-line interface for contact management and want an easy way to maintain an address book with the added feature of birthday reminders.
 Technologies : Python libraries, Docker, Githab
