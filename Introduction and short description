@@ -32,3 +32,4 @@ o	The main function initializes the address book, provides a welcome message, an
 Застосунок упакований та розгорнутий у контейнері Docker для зручності використання та забезпечення ізоляції середовища. 
 Use Case
 This bot can be used as a personal assistant for managing contacts, storing and retrieving information efficiently, and being notified of upcoming birthdays. It is a practical solution for users who prefer a command-line interface for contact management and want an easy way to maintain an address book with the added feature of birthday reminders.
+Technologies : Python libraries, Docker, Githab
